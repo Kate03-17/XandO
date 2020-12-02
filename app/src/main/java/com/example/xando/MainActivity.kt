@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var Button7: Button
     private lateinit var Button8: Button
     private lateinit var Button9: Button
-    private lateinit var resetButton1: Button
+    private lateinit var resetButton: Button
+
+    var winnerPlayer = 0
 
     private var activePlayer = 1
 
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         Button7 = findViewById(R.id.Button7)
         Button8 = findViewById(R.id.Button8)
         Button9 = findViewById(R.id.Button9)
-        resetButton1 = findViewById(R.id.resetButton)
+        resetButton = findViewById(R.id.resetButton)
 
         Button1.setOnClickListener(this)
         Button2.setOnClickListener(this)
@@ -54,6 +56,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         Button7.setOnClickListener(this)
         Button8.setOnClickListener(this)
         Button9.setOnClickListener(this)
+
+        resetButton.setOnClickListener(this)
     }
 
     override fun onClick(clickedView: View?) {
@@ -79,7 +83,36 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
             }
+
+            if( clickedView.id == R.id.resetButton){
+
+                winnerPlayer = 0
+                Button1.text = ""
+                Button2.setBackgroundColor(Color.BLUE)
+                Button2.text = ""
+                Button3.setBackgroundColor(Color.BLUE)
+                Button3.text = ""
+                Button3.setBackgroundColor(Color.BLUE)
+                Button4.text = ""
+                Button4.setBackgroundColor(Color.BLUE)
+                Button5.text = ""
+                Button5.setBackgroundColor(Color.BLUE)
+                Button6.text = ""
+                Button6.setBackgroundColor(Color.BLUE)
+                Button7.text = ""
+                Button7.setBackgroundColor(Color.BLUE)
+                Button8.text = ""
+                Button8.setBackgroundColor(Color.BLUE)
+                Button9.text = ""
+                Button9.setBackgroundColor(Color.BLUE)
+                enableButtons()
+
+
+            }
+
+
         }
+
 
 
 
@@ -104,7 +137,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun check(){
 
-        var winnerPlayer = 0
+//        var winnerPlayer = 0
+
+
+
 
         if(firstPlayer.contains(1) && firstPlayer.contains(2) && firstPlayer.contains(3)){
             winnerPlayer = 1
@@ -154,6 +190,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if(secondPlayer.contains(3) && secondPlayer.contains(5) && secondPlayer.contains(7)){
             winnerPlayer = 2
         }
+        if(((firstPlayer.count() == 5 && secondPlayer.count() == 4) || (firstPlayer.count() == 4 && secondPlayer.count() == 5)) && winnerPlayer == 0){
+            Toast.makeText(this, "It's a tie!", Toast.LENGTH_LONG).show()
+            disableButtons()
+        }
 
         if(winnerPlayer != 0){
             if(winnerPlayer == 1){
@@ -167,6 +207,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     private fun disableButtons(){
 
+        Button1.isEnabled = false
+        Button2.isEnabled = false
+        Button3.isEnabled = false
+        Button4.isEnabled = false
+        Button5.isEnabled = false
+        Button6.isEnabled = false
+        Button7.isEnabled = false
+        Button8.isEnabled = false
+        Button9.isEnabled = false
+
+    }
+
+    private fun enableButtons(){
+
+        Button1.isEnabled = true
+        Button2.isEnabled = true
+        Button3.isEnabled = true
+        Button4.isEnabled = true
+        Button5.isEnabled = true
+        Button6.isEnabled = true
+        Button7.isEnabled = true
+        Button8.isEnabled = true
+        Button9.isEnabled = true
 
     }
 
