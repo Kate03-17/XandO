@@ -88,9 +88,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 winnerPlayer = 0
                 Button1.text = ""
-                Button2.setBackgroundColor(Color.BLUE)
+                Button1.setBackgroundColor(Color.BLUE)
                 Button2.text = ""
-                Button3.setBackgroundColor(Color.BLUE)
+                Button2.setBackgroundColor(Color.BLUE)
                 Button3.text = ""
                 Button3.setBackgroundColor(Color.BLUE)
                 Button4.text = ""
@@ -106,6 +106,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Button9.text = ""
                 Button9.setBackgroundColor(Color.BLUE)
                 enableButtons()
+                firstPlayer.clear()
+                secondPlayer.clear()
+//                for(item in firstPlayer){
+//                    firstPlayer.remove(0)
+//                }
+//                for(item in firstPlayer){
+//                    secondPlayer.remove(0)
+//                }
 
 
             }
@@ -199,7 +207,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if(winnerPlayer == 1){
                 Toast.makeText(this, "X wins", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this, "Y wins", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "O wins", Toast.LENGTH_LONG).show()
             }
             disableButtons()
         }

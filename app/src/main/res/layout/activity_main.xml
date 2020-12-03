@@ -10,7 +10,7 @@
     <TableRow
         android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_weight="match_parent">
+        android:layout_width="match_parent">
 
         <Button
             android:id="@+id/Button1"
@@ -40,7 +40,7 @@
     <TableRow
         android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_weight="match_parent">
+        android:layout_width="match_parent">
 
         <Button
             android:id="@+id/Button4"
@@ -69,7 +69,7 @@
     <TableRow
         android:gravity="center"
         android:layout_height="wrap_content"
-        android:layout_weight="match_parent">
+        android:layout_width="match_parent">
 
         <Button
             android:id="@+id/Button7"
